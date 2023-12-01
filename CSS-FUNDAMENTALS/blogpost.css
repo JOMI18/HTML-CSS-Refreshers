@@ -1,0 +1,278 @@
+* {
+  /* border-top: 2px solid red; */
+  /* no inheritance involved */
+  margin: 0;
+
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* inheritance is mostly involved  with text */
+  color: #444;
+  position: relative;
+  border-top: 10px solid #23c9c9;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.main-header {
+  padding: 20px 40px;
+  /* height: 80px; */
+  /* padding top/bottom left/right */
+  background-color: #f7f7f7;
+  margin-bottom: 60px;
+}
+.post-header {
+  margin-bottom: 30px;
+}
+article {
+  margin-bottom: 60px;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #23c9c9;
+  border-bottom: 5px solid #23c9c9;
+  padding: 50px 40px;
+  margin: auto;
+  /* width: 700px; */
+}
+.post-img {
+  width: 100%;
+  height: auto;
+  /* auto is only necessary if height had been specified in html */
+}
+
+h1,
+h2,
+h3 {
+  color: #23c9c9;
+}
+h1 {
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 26px;
+}
+h2 {
+  margin-bottom: 30px;
+  font-size: 40px;
+  position: relative;
+}
+
+h3 {
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+li {
+  /* you don't style ol or ul elements for the li contents*/
+  font-size: 15px;
+  /* display: inline; */
+  /* to make it inline */
+  margin-bottom: 10px;
+}
+li:last-child {
+  margin: 0;
+}
+
+footer p {
+  text-align: center;
+  font-size: 14px;
+}
+
+/* article header p {
+  font-style: italic;
+  not a good practice as it can lead to complications
+  use class or Id Selectors
+} */
+
+#author {
+  font-style: italic;
+  font-size: 16px;
+}
+.related-author {
+  font-weight: bold;
+}
+.related {
+  list-style: none;
+  margin-left: 0;
+}
+
+/* Possible Pseudo Classes */
+li:first-child {
+  font-weight: bolder;
+}
+li:last-child {
+  font-style: italic;
+}
+
+/* li:nth-child(2) {
+  color: aquamarine;
+} */
+/* li:nth-child(even) {
+  color: rgb(121, 177, 159);
+} */
+/* li:nth-child(odd) {
+  color: rgb(27, 143, 106);
+} */
+
+/* pseudo misconceptions */
+
+/* article p:first-child {
+  color: red;
+  this will only work if p is the first child element in article 
+} */
+
+/* article p:last-child {
+  color: red;
+  this will only work if p is the last child element in article 
+} */
+
+a:link {
+  color: #23c9c9;
+  text-decoration: none;
+}
+
+/* a:visited {
+  color: #dda0dd;
+} */
+a:hover {
+  color: crimson;
+  font-weight: bolder;
+  text-decoration: underline crimson;
+}
+/* a:active {
+  color: darkslateblue;
+  font-style: italic;
+} */
+
+/* it must always be done {a:styling} in this format L-V-H-A */
+
+/* Resolving Conflicting CSS Rules-- it happens in order of priority
+
+!IMPORTANT HAS THE HIGHEST THEN THE INLINE STYLE
+in css files-- the order is ID, CLASS/PSEUDO CLASSES, ELEMENT SELECTOR, UNIVERSAL SELECTOR
+
+IF THE SAME ELEMENT HAS 2 CLASSES THAT ARE BEING STYLED, IT IS THE LAST STYLE IN THE DECLARATIVE BLOCK THAT WILL BE DECLARED */
+
+/* inline elements can't take height or width
+the take margin and padding to the right and left e.g span, strong, em */
+
+/* img is an inline-block element */
+
+nav a:link {
+  /* background-color: red; */
+  margin: 2px;
+  padding: 4px;
+  /* display: block; */
+  display: inline-block;
+}
+/* nav {
+  text-align: center;
+} */
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+button {
+  padding: 10px;
+  position: absolute;
+  font-size: 16px;
+  bottom: 50px;
+  background-color: #7eefef;
+  border-radius: 5px;
+  right: 50px;
+}
+
+/* pseudo elements */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* p::first-line {
+  color: #a53cbd;
+}
+h3 + p::first-line {
+  color: rgb(127, 133, 255);
+} */
+
+/* pseudo elements are inline by default */
+
+h2::after {
+  content: "TOP";
+  /* content w writing or w an empty string has to be first */
+  background-color: #f4f400;
+  font-size: 16px;
+  font-weight: bold;
+  color: #232323;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -15px;
+  right: -25px;
+  /* ::after will become the last child of the element while ::before would become the first child */
+}
+
+.posts-link {
+  display: inline-block;
+  text-align: center;
+}
+
+/* FLOATS */
+.author-img {
+  float: left;
+  margin-bottom: 20px;
+}
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  float: left;
+}
+nav {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+  /* clear works on block elements */
+}
+
+article {
+  width: 825px;
+  float: left;
+}
+aside {
+  width: 300px;
+  float: right;
+}
+footer {
+  clear: both;
+}
